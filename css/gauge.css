@@ -1,0 +1,133 @@
+.gauge-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  //overflow: hidden;
+}
+.gauge-list:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.gauge-list-item {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+
+  transform-origin: 100% 100%;
+}
+.gauge-list-item:before {
+  position: absolute;
+  z-index: 99;
+  top: 78%;
+  left: 74%;
+  width: 1px;
+  height: 5px;
+  content: '';
+  background-color: #000;
+  transform: rotate(-45deg);
+}
+.is-inner .gauge-list-item:before {
+  top: 79.5%;
+  left: 77%;
+}
+
+.gauge-list-item-inner {
+  position: absolute;
+  /*top: 100%;
+  left: 0;*/
+  z-index: 1;
+
+  display: inline-block;
+
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+
+  border-radius: 50%;
+  background-color: #999;
+}
+
+.gauge-list-item-inner:before {
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+
+  width: 99%;
+  height: 99%;
+
+  content: '';
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+  background-color: #fff;
+}
+.gauge-list-item:first-child .gauge-list-item-inner {
+  background-color: #fda428;
+  background-image: linear-gradient(25deg, #fff 0%, #fff 49.7%, #999 49.75%, #999 100%);
+}
+.gauge-list-item:nth-last-child(2) .gauge-list-item-inner {
+  background-color: #fda428;
+}
+.gauge-list-item:last-child .gauge-list-item-inner {
+  background-color: transparent;
+  background-image: linear-gradient(25deg, #fc0d1b 0%, #fc0d1b 49.70%, transparent 49.75%, transparent 100%);
+}
+
+.gauge-point {
+  position: absolute;
+  z-index: 99;
+  top: 25%;
+  left: -2%;
+}
+.is-inner .gauge-point {
+  top: 30%;
+  left: 8.5%;
+}
+
+.gauge-pointer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,0) rotate(45deg);
+  transform-origin: 50% 0%;
+  background-color: transparent;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 250px 5px 0 5px;
+  border-color: #299ae1 transparent transparent transparent;
+  transition: transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  will-change: transform;
+}
+
+.gauge-pointer:after {
+  position: absolute;
+  top: -50%;
+  left: 100%;
+  transform: translate(-50%,-260px);
+  content: '';
+  background-color: #299ae1;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
