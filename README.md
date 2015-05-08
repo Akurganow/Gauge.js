@@ -1,6 +1,6 @@
 # Gauge.js
 
-[Demo](https://github.com/Akurganow/gauge-js)
+[Demo](http://akurganow.github.io/Gauge.js/)
 
 ### Development
 - Clone repository
