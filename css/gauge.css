@@ -23,37 +23,41 @@
 
 .gauge-list-item {
   position: absolute;
-  top: -50%;
-  left: -50%;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
 
+.gauge-list-item-wrap {
+  position: relative;
   overflow: hidden;
 
   width: 100%;
   height: 100%;
-
-  transform-origin: 100% 100%;
 }
-.gauge-list-item:before {
+.gauge-list-item-wrap:before {
   position: absolute;
   z-index: 99;
   top: 78%;
-  left: 74%;
+  left: 53%;
   width: 1px;
   height: 5px;
   content: '';
   background-color: #000;
-  transform: rotate(-45deg);
+  transform: rotate(-70deg);
 }
-.is-inner .gauge-list-item:before {
-  top: 79.5%;
-  left: 77%;
+.is-inner .gauge-list-item-wrap:before {
+  top: 82.5%;
+  left: 56%;
 }
 
 .gauge-list-item-inner {
   position: absolute;
-  /*top: 100%;
-  left: 0;*/
-  z-index: 1;
+  top: 100%;
+  left: 100%;
+  z-index: 9;
 
   display: inline-block;
 
@@ -64,6 +68,8 @@
 
   border-radius: 50%;
   background-color: #999;
+  transform-origin: 0 0;
+  transform: translate(-50%, -50%);
 }
 
 .gauge-list-item-inner:before {
@@ -81,16 +87,33 @@
   border-radius: 50%;
   background-color: #fff;
 }
+.gauge-list-item-inner:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 50%;
+}
 .gauge-list-item:first-child .gauge-list-item-inner {
   background-color: #fda428;
   background-image: linear-gradient(25deg, #fff 0%, #fff 49.7%, #999 49.75%, #999 100%);
 }
+.gauge-list-item:nth-last-child(3) .gauge-list-item-inner {
+  background-color: #999;
+  background-image: linear-gradient(25deg, #999 0%, #999 50.70%, #fda428 50.75%, #fda428 60%, #fff 60%, #fff 100%);
+}
 .gauge-list-item:nth-last-child(2) .gauge-list-item-inner {
   background-color: #fda428;
+  background-image: linear-gradient(25deg, #fda428 0%, #fda428 50.70%, #fc0d1b 50.75%, #fc0d1b 60%, #fff 60%, #fff 100%);
 }
 .gauge-list-item:last-child .gauge-list-item-inner {
-  background-color: transparent;
-  background-image: linear-gradient(25deg, #fc0d1b 0%, #fc0d1b 49.70%, transparent 49.75%, transparent 100%);
+  background-color: #fc0d1b;
+  background-image: linear-gradient(25deg, #fc0d1b 0%, #fc0d1b 49.70%, #fff 49.75%, #fff 100%);
 }
 
 .gauge-point {
@@ -101,7 +124,7 @@
 }
 .is-inner .gauge-point {
   top: 30%;
-  left: 8.5%;
+  left: 9%;
 }
 
 .gauge-pointer {

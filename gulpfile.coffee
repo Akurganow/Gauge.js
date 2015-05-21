@@ -5,14 +5,14 @@ browserSync = require('browser-sync')
 gulp.task 'styles', ->
   gulp.src './css/*.css'
   .pipe $.sourcemaps.init()
-  .pipe $.concat 'style.css'
+  .pipe $.concat 'gauge.css'
   .pipe $.autoprefixer()
   .pipe $.sourcemaps.write()
   .pipe gulp.dest './'
   .pipe browserSync.reload {stream: true}
 
 gulp.task 'script-uglify', ->
-  gulp.src './script.js'
+  gulp.src './gauge.js'
   .pipe $.sourcemaps.init()
   .pipe $.uglify()
   .pipe $.rename({
@@ -21,7 +21,7 @@ gulp.task 'script-uglify', ->
   .pipe $.sourcemaps.write()
   .pipe gulp.dest './'
   
-  gulp.watch('script.js').on 'change', ->
+  gulp.watch('gauge.js').on 'change', ->
     browserSync.reload()
 
 gulp.task 'serve', ['script-uglify','styles'], ->
@@ -32,6 +32,6 @@ gulp.task 'serve', ['script-uglify','styles'], ->
   gulp.watch('**/*.html').on 'change', -> browserSync.reload()
   
   gulp.watch ['./css/*.css'], ['styles']
-  gulp.watch ['./script.js'], ['script-uglify']
+  gulp.watch ['./gauge.js'], ['script-uglify']
 
 gulp.task('default', ['serve'])
