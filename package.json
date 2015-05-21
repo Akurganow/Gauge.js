@@ -1,14 +1,14 @@
 {
-  "name": "Gauge",
+  "name": "akurganow-gauge",
   "version": "1.0.1",
   "description": "Gauge.js",
   "main": "gulpfile.coffee",
   "scripts": {
-    "test": "test"
+    "run": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Akurganow/gauge-js"
+    "url": "https://github.com/Akurganow/Gauge.js"
   },
   "keywords": [
     "gauge.js"
@@ -16,9 +16,9 @@
   "author": "Alexander Kurganow",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Akurganow/gauge-js/issues"
+    "url": "https://github.com/Akurganow/Gauge.js/issues"
   },
-  "homepage": "https://github.com/Akurganow/gauge-js",
+  "homepage": "http://akurganow.github.io/Gauge.js/",
   "devDependencies": {
     "browser-sync": "^2.7.1",
     "coffee-script": "^1.9.2",
