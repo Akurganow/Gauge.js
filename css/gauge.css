@@ -40,8 +40,8 @@
 .gauge-list-item-wrap:before {
   position: absolute;
   z-index: 99;
-  top: 78%;
-  left: 53%;
+  top: 81%;
+  left: 51%;
   width: 1px;
   height: 5px;
   content: '';
@@ -103,17 +103,13 @@
   background-color: #fda428;
   background-image: linear-gradient(25deg, #fff 0%, #fff 49.7%, #999 49.75%, #999 100%);
 }
-.gauge-list-item:nth-last-child(3) .gauge-list-item-inner {
-  background-color: #999;
-  background-image: linear-gradient(25deg, #999 0%, #999 50.70%, #fda428 50.75%, #fda428 60%, #fff 60%, #fff 100%);
-}
 .gauge-list-item:nth-last-child(2) .gauge-list-item-inner {
   background-color: #fda428;
-  background-image: linear-gradient(25deg, #fda428 0%, #fda428 50.70%, #fc0d1b 50.75%, #fc0d1b 60%, #fff 60%, #fff 100%);
+  background-image: linear-gradient(25deg, #fda428 0%, #fda428 100%);
 }
 .gauge-list-item:last-child .gauge-list-item-inner {
   background-color: #fc0d1b;
-  background-image: linear-gradient(25deg, #fc0d1b 0%, #fc0d1b 49.70%, #fff 49.75%, #fff 100%);
+  background-image: linear-gradient(25deg, #fda428 0%, #fda428 25.70%, #fc0d1b 25.75%, #fc0d1b 49.70%, #fff 49.75%, #fff 100%);
 }
 
 .gauge-point {

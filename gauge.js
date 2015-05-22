@@ -1,17 +1,21 @@
 function setPointer(value, pointer) {
-  var points = document.querySelectorAll('.gauge-list-item');
+  var list = document.querySelector('.gauge-list');
   var pointer = pointer || document.querySelector('.gauge-pointer');
-  var value = value || 4;
 
-  if (points.length > 0 && pointer) {
-    var initAngle = (360-270)/2;
-    var centerAngle = 270 / (points.length - 1);
+  if (!!list && !!pointer) {
+    window.clearTimeout(window.pointerTimeout);
+
+    var value = value || 4;
+    var points = list.dataset.points || document.querySelectorAll('.gauge-list-item').length;
+    var angle = list.dataset.angle;
+    var initAngle = (360-angle)/2;
+    var centerAngle = angle / (points - 1);
     var pointerRotate = initAngle+(centerAngle * value);
 
     pointer.style.transform = "translate(-50%,0) rotate("+pointerRotate+"deg)";
   }
   else {
-    setTimeout(function(){setPointer(pointer,value)},50);
+    window.pointerTimeout = setTimeout(function(){setPointer(pointer,value)},50);
   }
 }
 
@@ -21,12 +25,15 @@ Element.prototype.gauge = function (options) {
   //Defaults
   var points = options.points || 7
   var isInside = options.inside || false
+  var angle = options.angle || 270
 
   var list = document.createElement('ul');
-  var initAngle = 360-290;
-  var centerAngle = 270 / (points - 1);
+  var initAngle = 24 - ((180-angle)/2);
+  var centerAngle = angle / (points - 1);
 
   list.className = "gauge-list";
+  list.dataset.angle = angle;
+  list.dataset.points = points;
 
   for(var i=0; i<points; i++) {
     var listItem = document.createElement('li');
