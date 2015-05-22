@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Akurganow/gauge-js",
   "devDependencies": {
-    "akurganow-gauge": "^1.0.0",
+    "akurganow-gauge": "^1.1.0",
     "browser-sync": "^2.7.1",
     "coffee-script": "^1.9.2",
     "gulp": "^3.8.11",

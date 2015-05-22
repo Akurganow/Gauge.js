@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Gauge</title>
-  <script defer src="script.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <script defer src="gauge.js"></script>
+  <link rel="stylesheet" type="text/css" href="gauge.css">
   <style type="text/css">
   #gauge {
     position: absolute;
@@ -33,10 +33,14 @@
       }
     }
 
+    var points = 7;
+
     ready(function(){
       var options = {
+        angle: 270,
         inside: false,
-        pointer: 4
+        pointer: 0,
+        points: points
       }
 
       var container = document.querySelector('#gauge');
@@ -45,7 +49,7 @@
     });
 
     setInterval(function(){
-      var value = Math.floor(Math.random() * (6 - 0 + 1)) + 0;
+      var value = Math.floor(Math.random() * ((points - 1) - 0 + 1)) + 0;
 
       setPointer(value);
     },3000)
