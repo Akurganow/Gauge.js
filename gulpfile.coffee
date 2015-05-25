@@ -18,7 +18,7 @@ gulp.task 'styles', ->
 gulp.task 'script-uglify', ->
   gulp.src './gauge.js'
   .pipe $.sourcemaps.init()
-  #.pipe $.uglify()
+  .pipe $.uglify()
   .pipe $.rename({
     extname: ".min.js"
   })
