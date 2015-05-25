@@ -3,13 +3,12 @@ $ = require('gulp-load-plugins')()
 browserSync = require('browser-sync')
 
 gulp.task 'styles', ->
-  gulp.src ['./node_modules/akurganow-gauge/gauge.css']
+  gulp.src ['./node_modules/akurganow-gauge/gauge.min.css']
   .pipe gulp.dest './'
   .pipe browserSync.reload {stream: true}
 
 gulp.task 'script-uglify', ->
-  gulp.src ['./node_modules/akurganow-gauge/gauge.js']
-  .pipe $.uglify()
+  gulp.src ['./node_modules/akurganow-gauge/gauge.min.js']
   .pipe gulp.dest './'
   
   gulp.watch('script.js').on 'change', ->

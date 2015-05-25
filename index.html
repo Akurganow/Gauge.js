@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Gauge</title>
-  <script defer src="gauge.js"></script>
-  <link rel="stylesheet" type="text/css" href="gauge.css">
+  <script src="gauge.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="gauge.min.css">
   <style type="text/css">
   #gauge {
     position: absolute;
@@ -25,33 +25,24 @@
   <div id="gauge">
   </div>
   <script type="text/javascript">
-    function ready(fn) {
-      if (document.readyState != 'loading'){
-        fn();
-      } else {
-        document.addEventListener('DOMContentLoaded', fn);
-      }
-    }
-
     var points = 7;
 
-    ready(function(){
-      var options = {
-        angle: 270,
-        inside: false,
-        pointer: 0,
-        points: points
-      }
+    var options = {
+      container: '#gauge',
+      angle: 270,
+      inside: false,
+      value: 4,
+      points: points
+    }
 
-      var container = document.querySelector('#gauge');
-
-      container.gauge(options);
-    });
+    var gauge = new Gauge(options);
 
     setInterval(function(){
       var value = Math.floor(Math.random() * ((points - 1) - 0 + 1)) + 0;
 
-      setPointer(value);
+      gauge.value = value;
+
+      console.log('value: '+gauge.value);
     },3000)
     
   </script>
