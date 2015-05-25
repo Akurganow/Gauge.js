@@ -4,16 +4,23 @@
 
 ### Usage
 ```javascript
+var container = document.querySelector('#some-container');
+
 var options = {
+    container: container, //or just '#some-container'
     angle: 270,
     inside: false,
-    pointer: 0,
+    value: 4,
     points: 7
 }
 
-var container = document.querySelector('#some-container');
+gauge = new Gauge(options);
 
-container.gauge(options);
+//Now you can set or get value
+console.log(gauge.value) //4
+
+gauge.value = 6;
+console.log(gauge.value) //6
 ```
 
 
