@@ -1,2 +1,69 @@
-function setPointer(e,t){var a=document.querySelector(".gauge-list"),t=t||document.querySelector(".gauge-pointer");if(a&&t){window.clearTimeout(window.pointerTimeout);var e=e||4,n=a.dataset.points||document.querySelectorAll(".gauge-list-item").length,i=a.dataset.angle,s=(360-i)/2,l=i/(n-1),r=s+l*e;t.style.transform="translate(-50%,0) rotate("+r+"deg)"}else window.pointerTimeout=setTimeout(function(){setPointer(t,e)},50)}setPointer(),Element.prototype.gauge=function(e){var t=e.points||7,a=e.inside||!1,n=e.angle||270,i=document.createElement("ul"),s=24-(180-n)/2,l=n/(t-1);i.className="gauge-list",i.dataset.angle=n,i.dataset.points=t;for(var r=0;t>r;r++){var o=document.createElement("li"),d=document.createElement("div"),m=document.createElement("div"),u=document.createElement("div"),g=r*l-s+4,c=a?"gauge-list-item is-inner":"gauge-list-item";u.innerHTML="<span class='gauge-point-value'>"+r+"</span>",u.className="gauge-point",u.style.transform="rotate("+-1*g+"deg)",m.className="gauge-list-item-inner",m.appendChild(u),m.style.transform="rotate(-4deg) scale(1) translate(-50%, -50%)",d.className="gauge-list-item-wrap",d.appendChild(m),o.className=c,o.appendChild(d),o.style.transform="rotate("+g+"deg) translate(-50%, -50%)",i.appendChild(o)}var p=e.pointer||0,v=document.createElement("div");v.className="gauge-pointer",setPointer(v,p),this.appendChild(i),this.appendChild(v)};
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdhdWdlLmpzIl0sIm5hbWVzIjpbInNldFBvaW50ZXIiLCJ2YWx1ZSIsInBvaW50ZXIiLCJsaXN0IiwiZG9jdW1lbnQiLCJxdWVyeVNlbGVjdG9yIiwid2luZG93IiwiY2xlYXJUaW1lb3V0IiwicG9pbnRlclRpbWVvdXQiLCJwb2ludHMiLCJkYXRhc2V0IiwicXVlcnlTZWxlY3RvckFsbCIsImxlbmd0aCIsImFuZ2xlIiwiaW5pdEFuZ2xlIiwiY2VudGVyQW5nbGUiLCJwb2ludGVyUm90YXRlIiwic3R5bGUiLCJ0cmFuc2Zvcm0iLCJzZXRUaW1lb3V0IiwiRWxlbWVudCIsInByb3RvdHlwZSIsImdhdWdlIiwib3B0aW9ucyIsImlzSW5zaWRlIiwiaW5zaWRlIiwiY3JlYXRlRWxlbWVudCIsImNsYXNzTmFtZSIsImkiLCJsaXN0SXRlbSIsImxpc3RJdGVtV3JhcCIsImxpc3RJdGVtSW5uZXIiLCJwb2ludCIsIml0ZW1Sb3RhdGUiLCJpdGVtQ2xhc3NOYW1lIiwiaW5uZXJIVE1MIiwiYXBwZW5kQ2hpbGQiLCJwb2ludGVyVmFsdWUiLCJ0aGlzIl0sIm1hcHBpbmdzIjoiQUFBQSxRQUFTQSxZQUFXQyxFQUFPQyxHQUN6QixHQUFJQyxHQUFPQyxTQUFTQyxjQUFjLGVBQzlCSCxFQUFVQSxHQUFXRSxTQUFTQyxjQUFjLGlCQUVoRCxJQUFNRixHQUFVRCxFQUFTLENBQ3ZCSSxPQUFPQyxhQUFhRCxPQUFPRSxlQUUzQixJQUFJUCxHQUFRQSxHQUFTLEVBQ2pCUSxFQUFTTixFQUFLTyxRQUFRRCxRQUFVTCxTQUFTTyxpQkFBaUIsb0JBQW9CQyxPQUM5RUMsRUFBUVYsRUFBS08sUUFBUUcsTUFDckJDLEdBQWEsSUFBSUQsR0FBTyxFQUN4QkUsRUFBY0YsR0FBU0osRUFBUyxHQUNoQ08sRUFBZ0JGLEVBQVdDLEVBQWNkLENBRTdDQyxHQUFRZSxNQUFNQyxVQUFZLDRCQUE0QkYsRUFBYyxXQUdwRVYsUUFBT0UsZUFBaUJXLFdBQVcsV0FBV25CLFdBQVdFLEVBQVFELElBQVEsSUFJN0VELGFBRUFvQixRQUFRQyxVQUFVQyxNQUFRLFNBQVVDLEdBRWxDLEdBQUlkLEdBQVNjLEVBQVFkLFFBQVUsRUFDM0JlLEVBQVdELEVBQVFFLFNBQVUsRUFDN0JaLEVBQVFVLEVBQVFWLE9BQVMsSUFFekJWLEVBQU9DLFNBQVNzQixjQUFjLE1BQzlCWixFQUFZLElBQU8sSUFBSUQsR0FBTyxFQUM5QkUsRUFBY0YsR0FBU0osRUFBUyxFQUVwQ04sR0FBS3dCLFVBQVksYUFDakJ4QixFQUFLTyxRQUFRRyxNQUFRQSxFQUNyQlYsRUFBS08sUUFBUUQsT0FBU0EsQ0FFdEIsS0FBSSxHQUFJbUIsR0FBRSxFQUFLbkIsRUFBRm1CLEVBQVVBLElBQUssQ0FDMUIsR0FBSUMsR0FBV3pCLFNBQVNzQixjQUFjLE1BQ2xDSSxFQUFlMUIsU0FBU3NCLGNBQWMsT0FDdENLLEVBQWdCM0IsU0FBU3NCLGNBQWMsT0FDdkNNLEVBQVE1QixTQUFTc0IsY0FBYyxPQUMvQk8sRUFBY0wsRUFBSWIsRUFBZSxFQUFjLEVBQy9DbUIsRUFBZ0JWLEVBQVcsMkJBQTZCLGlCQUU1RFEsR0FBTUcsVUFBWSxtQ0FBbUNQLEVBQUUsVUFDdkRJLEVBQU1MLFVBQVksY0FDbEJLLEVBQU1mLE1BQU1DLFVBQVksVUFBVyxHQUFLZSxFQUFZLE9BRXBERixFQUFjSixVQUFZLHdCQUMxQkksRUFBY0ssWUFBWUosR0FDMUJELEVBQWNkLE1BQU1DLFVBQVksK0NBRWhDWSxFQUFhSCxVQUFZLHVCQUN6QkcsRUFBYU0sWUFBWUwsR0FFekJGLEVBQVNGLFVBQVlPLEVBQ3JCTCxFQUFTTyxZQUFZTixHQUNyQkQsRUFBU1osTUFBTUMsVUFBWSxVQUFVZSxFQUFXLDZCQUVoRDlCLEVBQUtpQyxZQUFZUCxHQUduQixHQUFJUSxHQUFlZCxFQUFRckIsU0FBVyxFQUNsQ0EsRUFBVUUsU0FBU3NCLGNBQWMsTUFDckN4QixHQUFReUIsVUFBWSxnQkFFcEIzQixXQUFXRSxFQUFRbUMsR0FFbkJDLEtBQUtGLFlBQVlqQyxHQUNqQm1DLEtBQUtGLFlBQVlsQyIsImZpbGUiOiJnYXVnZS5qcyIsInNvdXJjZXNDb250ZW50IjpbImZ1bmN0aW9uIHNldFBvaW50ZXIodmFsdWUsIHBvaW50ZXIpIHtcbiAgdmFyIGxpc3QgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcuZ2F1Z2UtbGlzdCcpO1xuICB2YXIgcG9pbnRlciA9IHBvaW50ZXIgfHwgZG9jdW1lbnQucXVlcnlTZWxlY3RvcignLmdhdWdlLXBvaW50ZXInKTtcblxuICBpZiAoISFsaXN0ICYmICEhcG9pbnRlcikge1xuICAgIHdpbmRvdy5jbGVhclRpbWVvdXQod2luZG93LnBvaW50ZXJUaW1lb3V0KTtcblxuICAgIHZhciB2YWx1ZSA9IHZhbHVlIHx8IDQ7XG4gICAgdmFyIHBvaW50cyA9IGxpc3QuZGF0YXNldC5wb2ludHMgfHwgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnLmdhdWdlLWxpc3QtaXRlbScpLmxlbmd0aDtcbiAgICB2YXIgYW5nbGUgPSBsaXN0LmRhdGFzZXQuYW5nbGU7XG4gICAgdmFyIGluaXRBbmdsZSA9ICgzNjAtYW5nbGUpLzI7XG4gICAgdmFyIGNlbnRlckFuZ2xlID0gYW5nbGUgLyAocG9pbnRzIC0gMSk7XG4gICAgdmFyIHBvaW50ZXJSb3RhdGUgPSBpbml0QW5nbGUrKGNlbnRlckFuZ2xlICogdmFsdWUpO1xuXG4gICAgcG9pbnRlci5zdHlsZS50cmFuc2Zvcm0gPSBcInRyYW5zbGF0ZSgtNTAlLDApIHJvdGF0ZShcIitwb2ludGVyUm90YXRlK1wiZGVnKVwiO1xuICB9XG4gIGVsc2Uge1xuICAgIHdpbmRvdy5wb2ludGVyVGltZW91dCA9IHNldFRpbWVvdXQoZnVuY3Rpb24oKXtzZXRQb2ludGVyKHBvaW50ZXIsdmFsdWUpfSw1MCk7XG4gIH1cbn1cblxuc2V0UG9pbnRlcigpO1xuXG5FbGVtZW50LnByb3RvdHlwZS5nYXVnZSA9IGZ1bmN0aW9uIChvcHRpb25zKSB7XG4gIC8vRGVmYXVsdHNcbiAgdmFyIHBvaW50cyA9IG9wdGlvbnMucG9pbnRzIHx8IDdcbiAgdmFyIGlzSW5zaWRlID0gb3B0aW9ucy5pbnNpZGUgfHwgZmFsc2VcbiAgdmFyIGFuZ2xlID0gb3B0aW9ucy5hbmdsZSB8fCAyNzBcblxuICB2YXIgbGlzdCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3VsJyk7XG4gIHZhciBpbml0QW5nbGUgPSAyNCAtICgoMTgwLWFuZ2xlKS8yKTtcbiAgdmFyIGNlbnRlckFuZ2xlID0gYW5nbGUgLyAocG9pbnRzIC0gMSk7XG5cbiAgbGlzdC5jbGFzc05hbWUgPSBcImdhdWdlLWxpc3RcIjtcbiAgbGlzdC5kYXRhc2V0LmFuZ2xlID0gYW5nbGU7XG4gIGxpc3QuZGF0YXNldC5wb2ludHMgPSBwb2ludHM7XG5cbiAgZm9yKHZhciBpPTA7IGk8cG9pbnRzOyBpKyspIHtcbiAgICB2YXIgbGlzdEl0ZW0gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdsaScpO1xuICAgIHZhciBsaXN0SXRlbVdyYXAgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtcbiAgICB2YXIgbGlzdEl0ZW1Jbm5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuICAgIHZhciBwb2ludCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuICAgIHZhciBpdGVtUm90YXRlID0gKGkgKiBjZW50ZXJBbmdsZSkgLSAoaW5pdEFuZ2xlKSArIDQ7XG4gICAgdmFyIGl0ZW1DbGFzc05hbWUgPSBpc0luc2lkZSA/ICdnYXVnZS1saXN0LWl0ZW0gaXMtaW5uZXInIDogJ2dhdWdlLWxpc3QtaXRlbSdcblxuICAgIHBvaW50LmlubmVySFRNTCA9IFwiPHNwYW4gY2xhc3M9J2dhdWdlLXBvaW50LXZhbHVlJz5cIitpK1wiPC9zcGFuPlwiXG4gICAgcG9pbnQuY2xhc3NOYW1lID0gXCJnYXVnZS1wb2ludFwiO1xuICAgIHBvaW50LnN0eWxlLnRyYW5zZm9ybSA9IFwicm90YXRlKFwiKygoLTEpKml0ZW1Sb3RhdGUpK1wiZGVnKVwiO1xuXG4gICAgbGlzdEl0ZW1Jbm5lci5jbGFzc05hbWUgPSBcImdhdWdlLWxpc3QtaXRlbS1pbm5lclwiO1xuICAgIGxpc3RJdGVtSW5uZXIuYXBwZW5kQ2hpbGQocG9pbnQpO1xuICAgIGxpc3RJdGVtSW5uZXIuc3R5bGUudHJhbnNmb3JtID0gXCJyb3RhdGUoLTRkZWcpIHNjYWxlKDEpIHRyYW5zbGF0ZSgtNTAlLCAtNTAlKVwiO1xuXG4gICAgbGlzdEl0ZW1XcmFwLmNsYXNzTmFtZSA9IFwiZ2F1Z2UtbGlzdC1pdGVtLXdyYXBcIlxuICAgIGxpc3RJdGVtV3JhcC5hcHBlbmRDaGlsZChsaXN0SXRlbUlubmVyKTtcblxuICAgIGxpc3RJdGVtLmNsYXNzTmFtZSA9IGl0ZW1DbGFzc05hbWU7XG4gICAgbGlzdEl0ZW0uYXBwZW5kQ2hpbGQobGlzdEl0ZW1XcmFwKTtcbiAgICBsaXN0SXRlbS5zdHlsZS50cmFuc2Zvcm0gPSBcInJvdGF0ZShcIitpdGVtUm90YXRlK1wiZGVnKSB0cmFuc2xhdGUoLTUwJSwgLTUwJSlcIjtcblxuICAgIGxpc3QuYXBwZW5kQ2hpbGQobGlzdEl0ZW0pO1xuICB9XG5cbiAgdmFyIHBvaW50ZXJWYWx1ZSA9IG9wdGlvbnMucG9pbnRlciB8fCAwXG4gIHZhciBwb2ludGVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7XG4gIHBvaW50ZXIuY2xhc3NOYW1lID0gXCJnYXVnZS1wb2ludGVyXCI7XG5cbiAgc2V0UG9pbnRlcihwb2ludGVyLHBvaW50ZXJWYWx1ZSk7XG5cbiAgdGhpcy5hcHBlbmRDaGlsZChsaXN0KTtcbiAgdGhpcy5hcHBlbmRDaGlsZChwb2ludGVyKTtcbn1cblxuIl0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
+function Gauge(options) {
+  this.angle = options.angle || 270;
+  this.points = options.points || 7;
+  this.isInside = options.inside || false
+  this.initAngle = 24 - ((180-this.angle)/2);
+  this.centerAngle = this.angle / (points - 1);
+  this.pointerInitAngle = (360-this.angle)/2;
+
+  var value = options.value || 0;
+
+  var pointer = document.createElement('div');
+  pointer.className = "gauge-pointer";
+  pointer.style.transform = "translate(-50%,0) rotate("+this.pointerInitAngle+"deg)";
+
+  var list = document.createElement('ul');
+  list.className = "gauge-list";
+
+  if (typeof options.container === 'string') {
+    var container = document.querySelector(options.container);
+  }
+  else {
+    var container = options.container;
+  }
+
+  Object.defineProperty(this, 'value', {
+    set: function(val){
+      value = val;
+
+      var pointerRotate = this.pointerInitAngle+(this.centerAngle * value);
+
+      pointer.style.transform = "translate(-50%,0) rotate("+pointerRotate+"deg)";
+    },
+
+    get: function(){
+      return value;
+    }
+  });
+
+  for(var i=0; i<points; i++) {
+    var listItem = document.createElement('li');
+    var listItemWrap = document.createElement('div');
+    var listItemInner = document.createElement('div');
+    var point = document.createElement('div');
+    var itemRotate = (i * this.centerAngle) - (this.initAngle) + 4;
+    var itemClassName = this.isInside ? 'gauge-list-item is-inner' : 'gauge-list-item'
+
+    point.innerHTML = "<span class='gauge-point-value'>"+i+"</span>"
+    point.className = "gauge-point";
+    point.style.transform = "rotate("+((-1)*itemRotate)+"deg)";
+
+    listItemInner.className = "gauge-list-item-inner";
+    listItemInner.appendChild(point);
+    listItemInner.style.transform = "rotate(-4deg) scale(1) translate(-50%, -50%)";
+
+    listItemWrap.className = "gauge-list-item-wrap"
+    listItemWrap.appendChild(listItemInner);
+
+    listItem.className = itemClassName;
+    listItem.appendChild(listItemWrap);
+    listItem.style.transform = "rotate("+itemRotate+"deg) translate(-50%, -50%)";
+
+    list.appendChild(listItem);
+  }
+
+  container.appendChild(list);
+  container.appendChild(pointer);
+
+  this.value = value;
+}
